@@ -4,10 +4,29 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gully-cricket-showdown3d</title>
+    <title>Gully Cricket Showdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
+  <body class="m-0 overflow-hidden bg-black">
     <div id="app"></div>
+    <div id="hud" class="pointer-events-none fixed inset-0 z-10 font-sans">
+      <div class="absolute top-4 left-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+        <div class="text-xs uppercase tracking-widest text-amber-200/80">Runs</div>
+        <div id="runs" class="text-5xl font-black leading-none">0</div>
+      </div>
+      <div
+        id="shot-label"
+        class="absolute top-[22%] left-1/2 -translate-x-1/2 text-7xl font-black uppercase tracking-wider text-amber-300 opacity-0 transition-opacity duration-200"
+        style="text-shadow: 0 0 24px rgba(255, 180, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.8);"
+      ></div>
+      <div
+        id="controls-hint"
+        class="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/40 px-4 py-2 text-xs font-mono text-white/90 backdrop-blur"
+      >
+        SPACE bowl · S sixer · F four · C orbit · 1/2/3/4 view
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
